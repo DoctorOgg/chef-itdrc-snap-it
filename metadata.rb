@@ -1,0 +1,10 @@
+name 'chef-itdrc-snap-it'
+maintainer 'ITDRC'
+maintainer_email 'YOUR_EMAIL'
+license 'All rights reserved'
+description 'Installs/Configures chef-itdrc-snap-it'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version '0.1.0'
+depends 'composer', '~> 2.5.2'
+depends 'apt', '~> 6.0.0'
+depends 'acme', '~> 2.0.0'

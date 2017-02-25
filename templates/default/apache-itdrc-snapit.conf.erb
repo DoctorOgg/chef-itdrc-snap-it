@@ -1,0 +1,28 @@
+# NOTE: CHEF WROTE THIS FILE, DO NOT MODIFY, UPDATE THE COOKBOOK!!!!!!
+# COOKBOOK: <%=cookbook_name%>
+<VirtualHost *:80>
+	RewriteEngine On
+	RewriteCond %{HTTPS} off
+	RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+	ServerSignature Off
+	ServerName <%=URI.parse(node["itdrc"]["snap-it"]["app_config"]["app_url"]).host%>
+</VirtualHost>
+
+<VirtualHost *:443>
+	SSLEngine On
+	ServerSignature Off
+	SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
+	SSLProtocol All -SSLv2 -SSLv3
+	SSLHonorCipherOrder On
+	SSLCompression off
+	SSLCertificateFile /etc/ssl/certs/<%=URI.parse(node["itdrc"]["snap-it"]["app_config"]["app_url"]).host%>.pem
+	SSLCertificateKeyFile /etc/ssl/private/<%=URI.parse(node["itdrc"]["snap-it"]["app_config"]["app_url"]).host%>.key
+	SSLCACertificateFile /etc/ssl/certs/<%=URI.parse(node["itdrc"]["snap-it"]["app_config"]["app_url"]).host%>-chain.pem
+	ServerName <%=URI.parse(node["itdrc"]["snap-it"]["app_config"]["app_url"]).host%>
+	DocumentRoot <%=node["itdrc"]["snap-it"]["install_dir"]%>/public
+	<Directory <%=node["itdrc"]["snap-it"]["install_dir"]%>/public>
+		Require all granted
+		AllowOverride All
+		Options +Indexes
+	</Directory>
+</VirtualHost>

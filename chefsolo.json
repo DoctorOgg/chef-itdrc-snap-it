@@ -1,0 +1,35 @@
+{
+  "name": "chefsolo",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "run_list": [
+    "recipe[chef-itdrc-snap-it]",
+    "recipe[chef-itdrc-snap-it::configure-mariadb]"
+  ],
+  "default_attributes": {
+    "itdrc": {
+      "snap-it": {
+        "letsencrypt": {
+          "contact": "mailto:your@email-address.com",
+          "self-signed": true
+        },
+        "mysql": {
+          "root_pw": "g00dluck"
+        },
+        "app_config": {
+          "app_url": "https://192.168.234.2",
+          "db": {
+            "password": "g00dluck"
+          },
+          "mail": {
+            "host": "SETME",
+            "username": "SETME",
+            "password": "SETME",
+            "from_address": "SETME",
+            "from_name": "ITDRC SNAP-IT"
+          }
+        }
+      }
+    }
+  }
+}
