@@ -1,4 +1,5 @@
-# ITDRC snap-it Cookbook
+# ITDRC Snap-IT Cookbook
+This cookbook will install and configure [Snap-IT](https://snipe-it.readme.io/docs),
 
 ## Simple standalone server install
 
@@ -25,7 +26,8 @@ wget -qO-  https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master
 
  Additionally, it is **critical** to configure the app_url
  ```
- "app_url": "https://example.com",```
+ "app_url": "https://example.com",
+ ```
  ***if you do not have an DNS name use the servers IP address.***
 
 5. Run Chef solo (as root)
