@@ -1,19 +1,19 @@
 #!/bin/bash
 # This script used to bootstrap a chef-solo install of the itdrc Snap IT cookbook.
 # For debian 8/8.5 machiens ONLY!!!!
-#   'curl -sSL https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/chef-solo-install/install.sh | sudo bash'
+#   'curl -sSL  https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/install.sh | sudo bash'
 # or:
-#   'wget -qO- https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/chef-solo-install/install.sh  | sudo bash'
+#   'wget -qO-  https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/install.sh  | sudo bash'
 
 # Fyi, i borrowed inspiration for this script for the docker folk, thanks guys!
 
 set -e
 CHEF_SOLO_DIR='/root/itdrc-sanp-it-installer'
-BERKS_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/chef-solo-install/Berksfile"
-SOLO_JSON_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/chef-solo-install/solo.json"
-SOLO_RB_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/chef-solo-install/solo.rb"
+BERKS_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/Berksfile"
+SOLO_JSON_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/solo.json"
+SOLO_RB_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/solo.rb"
 CHEF_DK_URL="https://packages.chef.io/files/current/chefdk/1.3.10/debian/8/chefdk_1.3.10-1_amd64.deb"
-RUN_CHEF_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/chef-solo-install/run-chef.sh"
+RUN_CHEF_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/run-chef.sh"
 
 URLS=( $BERKS_URL $SOLO_JSON_URL $SOLO_RB_URL $CHEF_DK_URL $RUN_CHEF_URL)
 command_exists() {
