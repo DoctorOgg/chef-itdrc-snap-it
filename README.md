@@ -42,7 +42,7 @@ wget -qO-  https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master
 Here is a list of tools used to develop this cookbook.
 
 * [Chef DK](https://downloads.chef.io/chefdk)
-* [Vagrant](ttps://www.vagrantup.com)
+* [Vagrant](https://www.vagrantup.com)
 * Vagrant plugins
 ```
 vagrant plugin install vagrant-omnibus
