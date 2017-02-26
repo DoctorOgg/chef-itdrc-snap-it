@@ -1,0 +1,5 @@
+source 'https://supermarket.chef.io'
+cookbook 'composer', '~> 2.5.2'
+cookbook 'chef-itdrc-snap-it', git: "https://github.com/DoctorOgg/chef-itdrc-snap-it.git"
+cookbook 'apt', '~> 6.0.0'
+cookbook 'acme', '~> 2.0.0'

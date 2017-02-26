@@ -1,6 +1,6 @@
 include_recipe 'acme'
-node.set['acme']['contact'] = node["itdrc"]["snap-it"]["letsencrypt"]["contact"]
-node.set['acme']['endpoint'] = 'https://acme-v01.api.letsencrypt.org'
+node.override['acme']['contact'] = node["itdrc"]["snap-it"]["letsencrypt"]["contact"]
+node.override['acme']['endpoint'] = 'https://acme-v01.api.letsencrypt.org'
 site=URI.parse(node["itdrc"]["snap-it"]["app_config"]["app_url"]).host
 
 service 'apache2' do

@@ -2,7 +2,10 @@ apt_repository 'mariadb' do
   uri 'http://downloads.mariadb.com/MariaDB/mariadb-10.1.21/repo/debian/'
   trusted true
   components ['main']
+  keyserver 'keys.gnupg.net'
+  key 'CBCB082A1BB943DB'
 end
+# apt-key adv --keyserver keys.gnupg.net --recv CBCB082A1BB943DB
 
 package 'mariadb-server' do
   action :install
@@ -19,9 +22,9 @@ script 'UPDATE maria db root passwords' do
   code <<-EOF
   mysql -h #{node["itdrc"]["snap-it"]["app_config"]["db"]["host"]} -u root  -e "UPDATE mysql.user SET Password=PASSWORD('#{node["itdrc"]["snap-it"]["mysql"]["root_pw"]}') WHERE User='root'; FLUSH PRIVILEGES;"
   /etc/init.d/mysql restart
-  touch /root/.irdc-mariadb-pw-set
+  touch /etc/mysql/irdc-mariadb-pw-set
   EOF
-  not_if do ::File.exists?('/root/.irdc-mariadb-pw-set') end
+  not_if do ::File.exists?('/etc/mysql/irdc-mariadb-pw-set') end
 end
 
 script 'create db and user' do
