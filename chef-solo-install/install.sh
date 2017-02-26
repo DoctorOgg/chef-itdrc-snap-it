@@ -32,6 +32,12 @@ if ! command_exists "bc"; then
   apt-get install -y bc
 fi
 
+if ! command_exists "git"; then
+  echo "Alright, I dont have git, i'm going to install git!"
+  apt-get update
+  apt-get install -y git-core
+fi
+
 # Before we continue, are we running debian 8 or above? Simple test, but better than nothing
 if [ -e /etc/debian_version ];  then
   echo "Looks like we are running a flavor of debian, now to check version."
