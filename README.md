@@ -22,7 +22,7 @@ wget -qO-  https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master
    "self-signed": false
  },
  ```
- This will enable us to ask for a signed SSL certificate from https://letsencrypt.org. If your machine is not on the public internet **you should set ```"self-signed": true```***, this will generate a self-signed SSL certificate instead.
+ This will enable us to ask for a signed SSL certificate from https://letsencrypt.org. If your machine is not on the public internet **you should set ```"self-signed": true```**, this will generate a self-signed SSL certificate instead.
 
  Additionally, it is **critical** to configure the app_url
  ```
