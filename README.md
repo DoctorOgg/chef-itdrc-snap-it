@@ -12,7 +12,7 @@ This cookbook will install and configure [Snap-IT](https://snipe-it.readme.io/do
 wget -qO-  https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/install.sh  | sudo bash
 ```
 
-4. Configure your chef settings stored in ```/root/itdrc-sanp-it-installer```
+4. Configure your chef settings stored in ```/root/itdrc-sanp-it-installer/solo.json```
 
  NOTE: if your machine is accessible from the internet, you should configure the following.
 
