@@ -2,8 +2,6 @@ apt_repository 'mariadb' do
   uri 'http://downloads.mariadb.com/MariaDB/mariadb-10.1.21/repo/debian/'
   trusted true
   components ['main']
-  keyserver 'keys.gnupg.net'
-  key 'CBCB082A1BB943DB'
 end
 # apt-key adv --keyserver keys.gnupg.net --recv CBCB082A1BB943DB
 
