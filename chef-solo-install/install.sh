@@ -62,7 +62,7 @@ echo "Ok, lets get the required files."
 for i in "${URLS[@]}"; do
     file=`echo ${i##*/}`
     if ! [ -e "${CHEF_SOLO_DIR}/$file" ]; then
-      curl "${i}" -o "${CHEF_SOLO_DIR}/$file"
+      curl ${i} -o ${CHEF_SOLO_DIR}/${file}
     fi
 done
 
@@ -77,6 +77,8 @@ dpkg -i "${CHEF_SOLO_DIR}/${deb}"
 echo "Retrieving cookbooks"
 (cd $CHEF_SOLO_DIR && berks vendor cookbooks/ )
 
+
 echo "Alright we got the requirements installed, you should now edit solo.json, then run ./run-chef.sh"
+echo "You can find our chef-solo files here: ${CHEF_SOLO_DIR}"
 
 exit 0
