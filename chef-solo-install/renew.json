@@ -1,0 +1,26 @@
+{
+  "run_list": [
+    "recipe[chef-itdrc-snap-it::get-ssl-cert]"
+  ],
+  "itdrc": {
+    "snap-it": {
+      "letsencrypt": {
+        "contact": "mailto:youre@email-address.com",
+        "self-signed": false
+      },
+      "app_config": {
+        "app_url": "https://example.com",
+        "db": {
+          "password": "g00dluck"
+        },
+        "mail": {
+          "host": "SETME",
+          "username": "SETME",
+          "password": "SETME",
+          "from_address": "SETME",
+          "from_name": "ITDRC SNAP-IT"
+        }
+      }
+    }
+  }
+}

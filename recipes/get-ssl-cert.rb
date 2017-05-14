@@ -1,3 +1,8 @@
+include_recipe 'acme'
+node.override['acme']['contact'] = node["itdrc"]["snap-it"]["letsencrypt"]["contact"]
+node.override['acme']['endpoint'] = 'https://acme-v01.api.letsencrypt.org'
+site=URI.parse(node["itdrc"]["snap-it"]["app_config"]["app_url"]).host
+
 service 'apache2' do
   supports :status => true
   action [ :enable, :start ]

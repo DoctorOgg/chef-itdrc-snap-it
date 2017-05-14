@@ -11,11 +11,13 @@ set -e
 CHEF_SOLO_DIR='/root/itdrc-sanp-it-installer'
 BERKS_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/Berksfile"
 SOLO_JSON_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/solo.json"
+RENEW_JSON_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/renew.json"
 SOLO_RB_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/solo.rb"
 CHEF_DK_URL="https://packages.chef.io/files/stable/chefdk/1.3.43/debian/8/chefdk_1.3.43-1_amd64.deb"
 RUN_CHEF_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/run-chef.sh"
+RENEW_CHEF_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/rewnew-cert.sh"
 
-URLS=( $BERKS_URL $SOLO_JSON_URL $SOLO_RB_URL $CHEF_DK_URL $RUN_CHEF_URL)
+URLS=( $BERKS_URL $SOLO_JSON_URL $SOLO_RB_URL $CHEF_DK_URL $RUN_CHEF_URLm $RENEW_CHEF_URL $RENEW_JSON_URL)
 command_exists() {
     command -v "$@" > /dev/null 2>&1
 }
