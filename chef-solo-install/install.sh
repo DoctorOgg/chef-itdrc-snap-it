@@ -12,7 +12,7 @@ CHEF_SOLO_DIR='/root/itdrc-sanp-it-installer'
 BERKS_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/Berksfile"
 SOLO_JSON_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/solo.json"
 SOLO_RB_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/solo.rb"
-CHEF_DK_URL="https://packages.chef.io/files/current/chefdk/1.3.10/debian/8/chefdk_1.3.10-1_amd64.deb"
+CHEF_DK_URL="https://packages.chef.io/files/stable/chefdk/1.3.43/debian/8/chefdk_1.3.43-1_amd64.deb"
 RUN_CHEF_URL="https://raw.githubusercontent.com/DoctorOgg/chef-itdrc-snap-it/master/chef-solo-install/run-chef.sh"
 
 URLS=( $BERKS_URL $SOLO_JSON_URL $SOLO_RB_URL $CHEF_DK_URL $RUN_CHEF_URL)
