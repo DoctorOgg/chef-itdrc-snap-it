@@ -16,6 +16,16 @@ user node["itdrc"]["snap-it"]["user"] do
   shell '/bin/sh'
 end
 
+script 'set bash as default' do
+  interpreter 'bash'
+  user 'root'
+  cwd '/tmp'
+  code <<-EOF
+  echo "dash dash/sh boolean false" | debconf-set-selections
+  dpkg-reconfigure -f noninteractive dash
+  EOF
+end
+
 include_recipe "#{cookbook_name}::install"
 include_recipe "#{cookbook_name}::configure"
 include_recipe "#{cookbook_name}::firewall"
